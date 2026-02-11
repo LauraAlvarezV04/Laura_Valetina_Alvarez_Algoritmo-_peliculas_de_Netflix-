@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>SeriesMash - Ranking de Series</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>🎬 SeriesMash</h1>
+        <p>¿Cuál serie verías ahora?</p>
+    </header>
+
+    <main>
+        <div class="battle-container">
+            <button id="optionA" class="series-btn" onclick="vote(0)"></button>
+            <div class="vs">VS</div>
+            <button id="optionB" class="series-btn" onclick="vote(1)"></button>
+        </div>
+
+        <div id="ranking" class="ranking-container"></div>
+    </main>
+
+    <footer>
+        <p>Algoritmo basado en comparación A/B y ranking dinámico</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
