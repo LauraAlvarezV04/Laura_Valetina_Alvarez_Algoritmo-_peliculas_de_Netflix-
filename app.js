@@ -1,4 +1,3 @@
-// Lista base adaptada al tema Series
 let series = [
     { name: "Stranger Things", score: 0 },
     { name: "Wednesday", score: 0 },
@@ -12,7 +11,7 @@ let series = [
 
 let currentPair = [];
 
-// Genera comparación A/B aleatoria
+// Obtener dos opciones distintas
 function getRandomPair() {
     let first = Math.floor(Math.random() * series.length);
     let second;
@@ -27,29 +26,39 @@ function getRandomPair() {
     document.getElementById("optionB").innerText = series[second].name;
 }
 
-// Usuario vota
-function vote(choice) {
-    let selectedIndex = currentPair[choice];
-    series[selectedIndex].score++;
+// Registrar voto
+function vote(index) {
+    let selectedSeriesIndex = currentPair[index];
+    series[selectedSeriesIndex].score++;
 
     updateRanking();
     getRandomPair();
 }
 
-// Ordena y muestra ranking
+// Actualizar ranking
 function updateRanking() {
-    let sortedSeries = [...series].sort((a, b) => b.score - a.score);
+    let sorted = [...series].sort((a, b) => b.score - a.score);
 
-    let rankingHTML = "<h2>🔥 Ranking Actual</h2><ol>";
+    let html = "<h2>🔥 Ranking Actual</h2><ol>";
 
-    sortedSeries.forEach(item => {
-        rankingHTML += `<li>${item.name} — ${item.score} votos</li>`;
+    sorted.forEach(item => {
+        html += `<li>${item.name} — ${item.score} votos</li>`;
     });
 
-    rankingHTML += "</ol>";
+    html += "</ol>";
 
-    document.getElementById("ranking").innerHTML = rankingHTML;
+    document.getElementById("ranking").innerHTML = html;
 }
 
-// Inicializa primera comparación
-getRandomPair();
+// Asignar eventos correctamente cuando carga la página
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("optionA").addEventListener("click", function () {
+        vote(0);
+    });
+
+    document.getElementById("optionB").addEventListener("click", function () {
+        vote(1);
+    });
+
+    getRandomPair();
+});
