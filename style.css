@@ -1,18 +1,18 @@
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #141414;
     color: #F5F5F5;
     text-align: center;
 }
 
 header {
-    padding: 30px 20px 10px 20px;
+    padding: 40px 20px 20px 20px;
 }
 
 h1 {
     color: #E50914;
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 10px;
 }
 
@@ -24,8 +24,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px 0;
     gap: 30px;
+    margin: 60px 0;
 }
 
 .series-btn {
@@ -34,11 +34,11 @@ p {
     border: 2px solid #E50914;
     padding: 25px;
     font-size: 18px;
-    width: 220px;
-    height: 100px;
-    border-radius: 10px;
+    width: 240px;
+    height: 110px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .series-btn:hover {
@@ -48,8 +48,8 @@ p {
 
 .vs {
     font-size: 22px;
-    color: #E50914;
     font-weight: bold;
+    color: #E50914;
 }
 
 .ranking-container {
@@ -61,19 +61,18 @@ p {
 }
 
 ol {
-    list-style-position: inside;
     padding: 0;
 }
 
 li {
+    list-style: none;
     margin: 8px 0;
     font-size: 18px;
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 60px;
     padding: 20px;
     background-color: #1F1F1F;
-    font-size: 14px;
     color: #888;
 }
